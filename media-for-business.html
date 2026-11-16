@@ -334,8 +334,41 @@ footer .legal{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap
 .contact .intro{margin-bottom:6px}
 @media (max-width:760px){.card .body{padding-top:92px}.hero .ph{position:static;margin-top:22px}.hero{padding-top:140px}}
 
-.hero .bgv video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.3;filter:grayscale(.25)}
-.hero .bgv .glow{background:radial-gradient(60% 50% at 50% 38%,#d8b26a26 0%,#d8b26a00 70%),linear-gradient(180deg,#080808cc 0%,#08080866 35%,#08080899 70%,#080808 100%)}
+/* Hero background: a drawn animation instead of a video. Search rank climbing, enquiries landing, the line going up. */
+.hero .bgv.biz{overflow:hidden}
+.bgv .chart{position:absolute;inset:0;width:100%;height:100%;opacity:.75}
+.bgv .line{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 9s cubic-bezier(.4,0,.2,1) infinite}
+.bgv .area{opacity:0;animation:rise 9s ease-in-out infinite}
+.bgv .bars rect{fill:#d8b26a;opacity:.14;transform-box:fill-box;transform-origin:bottom;transform:scaleY(0);animation:grow 9s cubic-bezier(.22,1,.36,1) infinite}
+.bgv .bars rect:nth-child(2){animation-delay:.25s}.bgv .bars rect:nth-child(3){animation-delay:.5s}.bgv .bars rect:nth-child(4){animation-delay:.75s}.bgv .bars rect:nth-child(5){animation-delay:1s}.bgv .bars rect:nth-child(6){animation-delay:1.25s}
+@keyframes draw{0%{stroke-dashoffset:1;opacity:1}62%{stroke-dashoffset:0;opacity:1}90%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+@keyframes rise{0%,30%{opacity:0}65%,90%{opacity:1}100%{opacity:0}}
+@keyframes grow{0%{transform:scaleY(0)}45%,90%{transform:scaleY(1)}100%{transform:scaleY(0)}}
+.bgv .float{position:absolute;width:236px;font-family:Inter,system-ui,sans-serif;opacity:.85}
+.bgv .search{left:4%;top:58%}
+.bgv .toasts{right:4%;top:20%}
+.bgv .bar{display:flex;align-items:center;gap:10px;height:42px;padding:0 14px;border-radius:999px;background:#17171f;border:1px solid var(--line-strong);color:var(--muted);font-size:13px}
+.bgv .bar svg{width:15px;height:15px;color:var(--orange);flex:none}
+.bgv .type{display:inline-block;overflow:hidden;white-space:nowrap;border-right:2px solid var(--orange);width:0;animation:type 9s steps(12,end) infinite}
+@keyframes type{0%{width:0}22%,92%{width:12ch}100%{width:0}}
+.bgv ol{list-style:none;margin:10px 0 0;padding:0;position:relative;height:148px;counter-reset:r}
+.bgv ol li{position:absolute;left:0;right:0;height:32px;display:flex;align-items:center;gap:10px;padding:0 12px;border-radius:8px;background:#17171f;border:1px solid var(--line);color:var(--faint);font-size:12px}
+.bgv ol li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--line-strong);flex:none}
+.bgv ol li:nth-child(1){top:0;animation:down1 9s cubic-bezier(.22,1,.36,1) infinite}
+.bgv ol li:nth-child(2){top:38px;animation:down1 9s cubic-bezier(.22,1,.36,1) infinite}
+.bgv ol li:nth-child(3){top:76px;animation:down1 9s cubic-bezier(.22,1,.36,1) infinite}
+.bgv ol li.you{top:114px;background:#d8b26a;border-color:#d8b26a;color:#080808;font-weight:700;animation:up3 9s cubic-bezier(.22,1,.36,1) infinite;z-index:1}
+.bgv ol li.you::before{background:#080808}
+@keyframes up3{0%,30%{transform:translateY(0)}55%,92%{transform:translateY(-114px)}100%{transform:translateY(0)}}
+@keyframes down1{0%,30%{transform:translateY(0)}55%,92%{transform:translateY(38px)}100%{transform:translateY(0)}}
+.bgv .toast{background:#17171f;border:1px solid var(--line-strong);border-left:3px solid var(--orange);border-radius:10px;padding:10px 14px;margin-bottom:10px;opacity:0;transform:translateX(26px);animation:toast 9s cubic-bezier(.22,1,.36,1) infinite}
+.bgv .toast b{display:block;font-size:13px;color:var(--text);font-weight:600}
+.bgv .toast span{font-size:11.5px;color:var(--faint)}
+.bgv .t2{animation-delay:1.4s}.bgv .t3{animation-delay:2.8s}
+@keyframes toast{0%,18%{opacity:0;transform:translateX(26px)}30%,62%{opacity:1;transform:none}74%,100%{opacity:0;transform:translateX(26px)}}
+@media (max-width:1180px){.bgv .float{display:none}}
+@media (prefers-reduced-motion:reduce){.bgv .line{animation:none;stroke-dashoffset:0}.bgv .area{animation:none;opacity:1}.bgv .bars rect{animation:none;transform:none}.bgv .dot{display:none}.bgv .type{animation:none;width:12ch}.bgv ol li,.bgv .toast{animation:none}.bgv .toast{opacity:1;transform:none}}
+.hero .bgv .glow{background:radial-gradient(46% 42% at 50% 44%,#080808e6 0%,#08080800 100%),linear-gradient(180deg,#080808b3 0%,#08080800 30%,#08080800 72%,#080808 100%)}
 .card{min-height:360px}
 .svc{grid-template-columns:repeat(3,1fr)}
 @media (max-width:1100px){.svc{grid-template-columns:1fr 1fr}}
@@ -386,7 +419,29 @@ a.clip{display:block;text-decoration:none}
 
   <!-- 1. HERO: one headline, one main button, one quiet link. Same shape as the agency page. -->
   <section class="hero" aria-labelledby="hero-h">
-    <div class="bgv" aria-hidden="true"><video muted loop playsinline autoplay preload="metadata" poster="/videos/highlights/posters/content.jpg" src="/videos/highlights/content.mp4"></video><div class="glow"></div></div>
+    <div class="bgv biz" aria-hidden="true">
+      <svg class="chart" viewBox="0 0 1440 900" preserveAspectRatio="none">
+        <defs>
+          <pattern id="grid" width="72" height="72" patternUnits="userSpaceOnUse"><path d="M72 0H0V72" fill="none" stroke="#f1f2f4" stroke-opacity=".07" stroke-width="1"/></pattern>
+          <linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8b26a" stop-opacity=".28"/><stop offset="1" stop-color="#d8b26a" stop-opacity="0"/></linearGradient>
+        </defs>
+        <rect width="1440" height="900" fill="url(#grid)"/>
+        <g class="bars"><rect x="960" y="700" width="46" height="200"/><rect x="1040" y="640" width="46" height="260"/><rect x="1120" y="560" width="46" height="340"/><rect x="1200" y="470" width="46" height="430"/><rect x="1280" y="360" width="46" height="540"/><rect x="1360" y="250" width="46" height="650"/></g>
+        <path class="area" d="M0 800 C120 790 180 730 280 720 S440 760 540 680 S700 560 800 580 S960 470 1060 400 S1240 260 1320 220 L1440 130 V900 H0Z" fill="url(#fill)"/>
+        <path class="line" pathLength="1" d="M0 800 C120 790 180 730 280 720 S440 760 540 680 S700 560 800 580 S960 470 1060 400 S1240 260 1320 220 L1440 130" fill="none" stroke="#d8b26a" stroke-width="3" stroke-linecap="round"/>
+        <circle class="dot" r="7" fill="#f0d9a6"><animateMotion dur="9s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;.62;1" calcMode="linear" path="M0 800 C120 790 180 730 280 720 S440 760 540 680 S700 560 800 580 S960 470 1060 400 S1240 260 1320 220 L1440 130"/></circle>
+      </svg>
+      <div class="float search">
+        <div class="bar"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="type">best near me</span></div>
+        <ol><li>Someone else</li><li>Someone else</li><li>Someone else</li><li class="you">Your business</li></ol>
+      </div>
+      <div class="float toasts">
+        <div class="toast t1"><b>New enquiry</b><span>From your website</span></div>
+        <div class="toast t2"><b>Booking made</b><span>While you were on the tools</span></div>
+        <div class="toast t3"><b>Call from Google</b><span>Found you in search</span></div>
+      </div>
+      <div class="glow"></div>
+    </div>
     <p class="tag fade">Media for Business · Sunshine Coast</p>
     <h1 id="hero-h" class="display reveal" data-split><span class="line">Get found.</span><span class="line o">Get chosen.</span></h1>
     <p class="sub fade">Websites, film, SEO and Google Ads for local businesses, from one Sunshine Coast crew.<br>One point of contact for all of it.</p>
