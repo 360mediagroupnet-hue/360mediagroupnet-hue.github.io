@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="en-AU">
+<head><meta name="robots" content="noindex,nofollow"><script>window['ga-disable-G-ZRWR4CH3FP']=true;window['ga-disable-G-XSNT1FHRZ1']=true;window.fbq=function(){};</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>360 Media Group | Media for Business, Sunshine Coast (draft)</title>
+<meta name="description" content="Websites, film, SEO and Google Ads for local businesses, from one Sunshine Coast crew.">
+
+<meta name="theme-color" content="#080808">
+<style>
+@font-face{font-family:Anton;font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/anton-75f46c51.woff2) format("woff2")}
+@font-face{font-family:Inter;font-style:normal;font-weight:300 700;font-display:swap;src:url(/fonts/inter-1ab1ad55.woff2) format("woff2")}
+
+/* 360 Media Group layout in 360's own colours: black #080808, gold #d8b26a, pale gold #f0d9a6, off-white #f1f2f4 (from the live site) */
+:root{
+  --bg:#080808;
+  --bg-2:#0b0b0f;
+  --slate:#0b0b0f;
+  --surface:#17171f;
+  --surface-2:#1c1c26;
+  --line:#f1f2f41a;
+  --line-strong:#f1f2f433;
+  --text:#f1f2f4;
+  --muted:#f1f2f4a6;
+  --faint:#f1f2f473;
+  --orange:#d8b26a;
+  --orange-hi:#f0d9a6;
+  --peach:#f0d9a6;
+  --ink:#080808;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --wrap:1344px;
+  --gut:24px;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
+.display{font-family:Anton,Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:.92;letter-spacing:0;margin:0}
+.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);margin:0 0 6px;font-weight:600}
+.intro{color:var(--muted);font-size:16px;margin:14px 0 0;max-width:46ch}
+section{position:relative}
+.sec{padding:96px 0;border-top:1px solid var(--line)}
+.sec.alt{background:var(--bg-2)}
+.sec h2.display{font-size:clamp(44px,6.2vw,84px)}
+.o{color:var(--orange)}
+
+/* Reveal */
+.reveal .w{display:inline-block;opacity:0;filter:blur(10px);transform:translateY(.12em);transition:opacity .7s var(--ease),filter .7s var(--ease),transform .7s var(--ease)}
+.reveal.in .w{opacity:1;filter:none;transform:none}
+.fade{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.fade.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal .w,.fade{opacity:1!important;filter:none!important;transform:none!important;transition:none!important}
+}
+
+/* Pill buttons */
+.pill{display:inline-flex;align-items:center;gap:12px;height:44px;padding:0 6px 0 18px;border-radius:999px;font-size:14px;font-weight:600;text-decoration:none;border:1px solid transparent;cursor:pointer;white-space:nowrap;transition:transform .3s var(--ease),background .2s}
+.pill:hover{transform:translateY(-1px)}
+.pill .dot{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;flex:none;transition:transform .3s var(--ease)}
+.pill:hover .dot{transform:translateX(2px)}
+.pill svg{width:15px;height:15px}
+.pill-dark,.pill-gold{background:var(--orange);color:var(--ink)}
+.pill-dark:hover,.pill-gold:hover{background:var(--orange-hi)}
+.pill-dark .dot,.pill-gold .dot{background:var(--ink);color:var(--orange)}
+.pill-line{background:transparent;color:var(--text);border-color:var(--line-strong)}
+.pill-line:hover{border-color:var(--text)}
+.pill-line .dot{background:var(--text);color:var(--ink)}
+.pill-white{background:#fff;color:var(--ink)}
+.pill-white .dot{background:var(--ink);color:var(--orange)}
+.pill-black{background:var(--ink);color:#fff}
+.pill-black .dot{background:var(--orange);color:var(--ink)}
+.pill-ghost{background:transparent;color:#fff;border-color:var(--line-strong);padding:0 18px}
+
+/* Floating nav */
+.nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:50;display:flex;align-items:center;gap:6px;background:#111111d9;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:14px;padding:6px;box-shadow:0 10px 30px #00000066}
+.nav .mark{display:grid;place-items:center;height:36px;padding:0 12px;border-radius:9px;background:var(--orange);color:var(--ink);font-family:Anton,sans-serif;font-size:19px;text-decoration:none;letter-spacing:.02em}
+.nav a.l{color:#fff;font-size:13px;text-decoration:none;padding:8px 14px;border-radius:8px;opacity:.85}
+.nav a.l:hover{opacity:1;background:#ffffff12}
+.nav .sep{width:1px;height:18px;background:#ffffff2e;margin:0 4px}
+.nav .cta{background:var(--orange);color:var(--ink);font-size:13px;font-weight:600;text-decoration:none;padding:9px 16px;border-radius:999px;margin-left:6px}
+@media (max-width:720px){.nav a.l,.nav .sep{display:none}.nav{width:calc(100% - 28px);justify-content:space-between}}
+
+/* Floating phone pill */
+.callpill{position:fixed;right:18px;bottom:18px;z-index:40;display:flex;align-items:center;gap:10px;background:var(--orange);color:var(--ink);font-weight:600;text-decoration:none;border-radius:999px;padding:7px 18px 7px 7px;font-size:14px;box-shadow:0 12px 30px #00000080}
+.callpill .dot{width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--orange);display:grid;place-items:center}
+.callpill svg{width:15px;height:15px}
+
+/* Hero */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:110px var(--gut) 60px;background:radial-gradient(90% 60% at 50% 0%,#1f1a10 0%,#000 70%)}
+.hero h1{font-size:clamp(64px,13.6vw,214px);line-height:.88}
+.hero h1 .line{display:block}
+.hero h1 .line.o{color:var(--orange)}
+.hero .tag{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--faint);margin:0 0 22px;font-weight:600}
+.hero .sub{margin-top:clamp(40px,9vh,110px);color:var(--muted);font-size:16px}
+.hero .ctas{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.hero .where{margin-top:22px;font-size:13px;color:var(--faint);display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
+.hero .where span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--orange);margin-right:8px;vertical-align:middle}
+
+/* Hero video */
+.hero{overflow:hidden}
+.hero .bgv{position:absolute;inset:0;z-index:0}
+.hero .bgv video{width:100%;height:100%;object-fit:cover;opacity:.32;filter:grayscale(.2)}
+.hero .bgv::after{content:"";position:absolute;inset:0;background:radial-gradient(80% 70% at 50% 45%,#0000 0%,#000c 75%),linear-gradient(180deg,#0009 0%,#0000 30%,#0000 70%,#000 100%)}
+.hero > *:not(.bgv){position:relative;z-index:1}
+
+/* Specialties + the deal */
+.spec{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
+@media (max-width:900px){.spec{grid-template-columns:1fr}}
+.spec article{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+.spec .n{font-family:Anton,sans-serif;color:var(--orange);font-size:15px;letter-spacing:.08em}
+.spec h3{font-size:30px;margin:6px 0 10px}
+.spec p{margin:0 0 14px;color:var(--muted);font-size:15px}
+.spec q{display:block;font-size:14px;color:var(--peach);quotes:none;border-top:1px solid var(--line);padding-top:14px}
+.spec q b{display:block;margin-top:6px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);font-weight:600}
+.deal{margin-top:14px;border:1px solid var(--orange);border-radius:18px;padding:34px;display:grid;grid-template-columns:1fr 1.3fr;gap:30px;align-items:center;background:linear-gradient(120deg,#1f1a10,#0c0c0c 60%)}
+.deal h3{font-size:clamp(30px,3.6vw,46px)}
+.deal p{margin:0;color:var(--muted);font-size:16px;max-width:60ch}
+.deal p b{color:var(--text)}
+@media (max-width:860px){.deal{grid-template-columns:1fr;gap:12px}}
+
+/* Reviews */
+.reviews{columns:3 320px;column-gap:14px;margin-top:40px}
+.rev{break-inside:avoid;margin:0 0 14px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px 26px}
+.rev.hl{border-color:var(--orange)}
+.rev blockquote{margin:0;font-size:15px;line-height:1.6;color:var(--text)}
+.rev cite{display:flex;justify-content:space-between;gap:10px;margin-top:14px;font-style:normal;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);font-weight:600}
+.rev cite span{color:var(--faint);letter-spacing:.06em;text-transform:none;font-weight:500}
+.stars{color:var(--orange);letter-spacing:2px;font-size:14px;margin-bottom:10px}
+.rev.more{display:none}
+.reviews.all .rev.more{display:block}
+.revbtn{margin-top:20px}
+
+/* Video deck */
+.deck-wrap{position:relative;margin-top:36px}
+.deck{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 2 * 16px) / 2.6);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 4px 18px}
+.deck::-webkit-scrollbar{display:none}
+@media (max-width:900px){.deck{grid-auto-columns:calc((100% - 16px) / 1.6)}}
+@media (max-width:560px){.deck{grid-auto-columns:88%}}
+.clip{scroll-snap-align:start;position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:var(--surface);border:0;padding:0;cursor:pointer;box-shadow:0 10px 24px #00000080}
+.clip video,.clip img{width:100%;height:100%;object-fit:cover}
+.clip .cap{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 14px;background:linear-gradient(transparent,#000000c4);color:#fff;font-size:13px;font-weight:600;text-align:left}
+.clip .play{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;background:var(--orange);color:var(--ink);display:grid;place-items:center}
+.clip .play svg{width:14px;height:14px}
+.clip .cap small{font-weight:400;opacity:.8}
+.clip.empty{background:repeating-linear-gradient(135deg,#141414 0 12px,#101010 12px 24px);box-shadow:none;border:1px dashed var(--line-strong);cursor:default;display:grid;place-items:center;color:var(--faint);font-size:13px}
+.arrow{position:absolute;top:calc(50% - 26px);width:40px;height:40px;border-radius:50%;background:var(--surface-2);color:var(--text);border:1px solid var(--line-strong);display:grid;place-items:center;cursor:pointer;z-index:2}
+.arrow:hover{background:var(--orange);color:var(--ink);border-color:var(--orange)}
+.arrow svg{width:16px;height:16px}
+.arrow.prev{left:-6px}.arrow.next{right:-6px}
+@media (max-width:640px){.arrow{display:none}}
+
+/* Lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:#000000f0;display:none;align-items:center;justify-content:center;padding:20px}
+.lb.open{display:flex}
+.lb video{max-height:90svh;max-width:100%;border-radius:14px}
+.lb .x{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:0;background:#ffffff1f;color:#fff;cursor:pointer;display:grid;place-items:center}
+
+/* Service cards */
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:40px}
+@media (max-width:760px){.svc{grid-template-columns:1fr}}
+.card{position:relative;min-height:440px;border-radius:18px;overflow:hidden;color:#fff;display:flex;align-items:flex-end;background:var(--surface);border:1px solid var(--line)}
+.card .bg{position:absolute;inset:0}
+.card .bg img,.card .bg video{width:100%;height:100%;object-fit:cover}
+.card .bg.none{background:radial-gradient(120% 80% at 15% 0%,#2a2a35 0%,#17171f 55%,#000 100%)}
+.card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0000 30%,#000000d9 100%)}
+.card .body{position:relative;z-index:1;padding:34px;max-width:440px}
+.card h3{font-size:34px;margin:0 0 8px}
+.card h3::after{content:"";display:block;width:36px;height:3px;background:var(--orange);margin-top:10px}
+.card p{margin:0 0 20px;font-size:14px;opacity:.88;line-height:1.5}
+@media (max-width:760px){.card{min-height:360px}.card .body{padding:24px}}
+
+/* Orange band (the old site's testimonial strip) */
+.band{background:var(--orange);color:var(--ink);padding:88px 0;text-align:center}
+.band .eyebrow{color:var(--ink);opacity:.6}
+.band blockquote{margin:14px auto 0;max-width:30ch;font-family:Anton,sans-serif;text-transform:uppercase;font-size:clamp(28px,4vw,48px);line-height:1.02}
+.band cite{display:block;margin-top:22px;font-style:normal;font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+
+/* Packages + FAQ pair */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:860px){.pair{grid-template-columns:1fr}}
+.pack{background:var(--surface);border:1px solid var(--line);color:#fff;border-radius:18px;padding:40px;display:flex;flex-direction:column}
+.sec .pack h2.display{font-size:30px}
+.from{font-family:Anton,sans-serif;color:var(--orange);margin:14px 0 22px;display:flex;align-items:flex-start;gap:6px;line-height:1}
+.from small{font-size:20px;margin-top:4px}
+.from b{font-weight:400;font-size:56px}
+.from.ask b{font-size:34px}
+.from small.u{font-family:Inter,sans-serif;font-size:13px;color:var(--muted);align-self:flex-end;margin:0 0 6px 4px}
+.plist{list-style:none;margin:0;padding:0}
+.plist li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}
+.plist li span{opacity:.85}
+.plist li b{font-weight:600;white-space:nowrap}
+.plist li.sub span{opacity:.6}
+.pack .pill{margin-top:auto;align-self:flex-start}
+.pack .spacer{height:34px}
+.cap{font-size:13px;color:var(--peach);margin:-8px 0 14px}
+
+.faqbox{background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:40px}
+.sec .faqbox h2.display{font-size:30px}
+.qa{border-bottom:1px solid var(--line)}
+.qa summary{list-style:none;cursor:pointer;display:flex;gap:12px;padding:13px 0;font-size:14px;color:var(--text)}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::before{content:"+";color:var(--orange);width:12px;flex:none;transition:transform .25s var(--ease)}
+.qa[open] summary::before{transform:rotate(45deg)}
+.qa p{margin:0 0 14px 24px;font-size:14px;color:var(--muted);max-width:56ch}
+.faqbox .qas{margin-top:18px}
+
+/* Program cards */
+.programs{display:none;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px}
+.programs.open{display:grid}
+@media (max-width:1180px){.programs{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.programs{grid-template-columns:1fr}}
+.prog{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;display:flex;flex-direction:column}
+.prog.hl{background:var(--orange);color:var(--ink);border-color:var(--orange)}
+.prog h3{font-size:30px;margin:0 0 6px}
+.prog .who{font-size:14px;color:var(--muted);margin:0 0 18px}
+.prog.hl .who{color:#000000b3}
+.meter{height:6px;border-radius:99px;background:var(--line);margin:2px 0 6px;overflow:hidden}
+.prog.hl .meter{background:#00000026}
+.meter i{display:block;height:100%;background:var(--orange);border-radius:99px}
+.prog.hl .meter i{background:var(--ink)}
+.share{font-size:12px;color:var(--faint);margin:0 0 16px}
+.prog.hl .share{color:#00000099}
+.prog ul{list-style:none;margin:0 0 22px;padding:0;flex:1}
+.prog li{font-size:14px;padding:9px 0 9px 22px;border-top:1px solid var(--line);position:relative}
+.prog.hl li{border-color:#00000026}
+.prog li::before{content:"";position:absolute;left:2px;top:15px;width:9px;height:5px;border-left:1.6px solid var(--orange);border-bottom:1.6px solid var(--orange);transform:rotate(-45deg)}
+.prog.hl li::before{border-color:var(--ink)}
+.prog .price{font-family:Anton,sans-serif;font-size:40px;line-height:1;margin-bottom:4px}
+.prog .price.ask{font-size:24px}
+.prog .per{font-size:12px;color:var(--faint);margin-bottom:18px}
+.prog.hl .per{color:#000000a6}
+.worth{font-size:12px;color:var(--faint);margin:-10px 0 18px}
+.prog.hl .worth{color:#000000b3}
+
+/* Coach section */
+.dark{background:var(--slate);color:#fff;padding:110px 0 120px;border-top:1px solid var(--line)}
+.dark h2.display{color:#fff;font-size:clamp(44px,6.2vw,84px);max-width:15ch}
+.dark .intro{color:var(--muted);max-width:52ch}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px}
+@media (max-width:960px){.tiles{grid-template-columns:1fr}}
+.tile{background:#00000059;border:1px solid var(--line);border-radius:16px;padding:26px}
+.tile h3{font-size:26px;margin:0}
+.tile .k{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin:6px 0 14px;font-weight:600}
+.tile p{margin:0;font-size:14px;color:#ffffffb3;line-height:1.55}
+.portrait{grid-row:span 2;border-radius:16px;overflow:hidden;background:radial-gradient(120% 80% at 30% 15%,#2a2a35 0%,#0b0b0f 70%);min-height:360px;display:grid;place-items:center;color:#ffffff59;font-size:13px;border:1px solid var(--line)}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.quotes{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
+.quote{background:#00000059;border:1px solid var(--line);border-left:3px solid var(--orange);border-radius:16px;padding:30px}
+.quote blockquote{margin:0;font-size:17px;line-height:1.55;color:#fff;max-width:80ch}
+.quote cite{display:block;margin-top:16px;font-style:normal;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}
+.clients{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-top:14px}
+.client{background:#00000059;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.client img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.client div{padding:16px 18px}
+.client b{display:block;font-family:Anton,sans-serif;text-transform:uppercase;font-size:20px;font-weight:400}
+.client span{font-size:13px;color:#ffffffa6}
+.dark .ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:40px}
+
+/* Contact */
+.contact{background:var(--bg-2);padding:110px 0;border-top:1px solid var(--line)}
+.cgrid{display:grid;grid-template-columns:1fr 1.15fr;gap:60px}
+@media (max-width:900px){.cgrid{grid-template-columns:1fr;gap:40px}}
+.contact h2.display{font-size:clamp(50px,6.2vw,84px)}
+.clist{list-style:none;padding:0;margin:30px 0 0}
+.clist li{display:flex;align-items:center;gap:12px;padding:7px 0;font-size:15px}
+.clist svg{width:15px;height:15px;color:var(--orange);flex:none}
+.clist a{text-decoration:none}
+.clist a:hover{text-decoration:underline}
+form .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:560px){form .row{grid-template-columns:1fr}}
+.f{margin-bottom:20px}
+.f label{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;font-weight:500}
+.f label i{font-style:normal;text-transform:none;letter-spacing:0;color:var(--faint)}
+.f input,.f select,.f textarea{width:100%;font:inherit;font-size:15px;height:48px;padding:0 14px;border:1px solid var(--line-strong);border-radius:10px;background:var(--surface);color:var(--text)}
+.f select option{background:var(--surface);color:var(--text)}
+.f textarea{height:120px;padding:12px 14px;resize:vertical}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--orange)}
+.hp{position:absolute;left:-9999px}
+.msg{display:none;margin-top:16px;padding:14px 16px;border-radius:10px;background:var(--surface-2);border-left:3px solid var(--orange);font-size:14px}
+
+/* Footer */
+footer{padding:56px 0 110px;border-top:1px solid var(--line);background:var(--bg)}
+footer .big{font-family:Anton,sans-serif;text-transform:uppercase;font-size:clamp(24px,3vw,34px);margin:0 0 10px}
+footer .line{font-size:14px;color:var(--muted);margin:2px 0}
+footer .line b{color:var(--text);font-weight:600}
+footer .links{display:flex;gap:22px;flex-wrap:wrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;margin:26px 0 18px}
+footer .links a{font-size:13px;text-decoration:none;color:var(--muted)}
+footer .links a:hover{color:var(--orange)}
+footer .legal{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--faint)}
+
+/* ---- additions for the business page ---- */
+.mock{position:fixed;top:0;left:0;right:0;z-index:60;background:var(--orange);color:var(--ink);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;text-align:center;padding:7px 12px;line-height:1.3}
+.nav{top:44px}
+.nav a.l,.nav .cta{white-space:nowrap}
+@media (max-width:1040px){.nav a.l.opt{display:none}}
+.hero{padding-top:150px;background:var(--bg)}
+.hero .bgv .glow{position:absolute;inset:0;background:radial-gradient(60% 50% at 50% 38%,#d8b26a2e 0%,#d8b26a00 70%),radial-gradient(90% 60% at 50% 0%,#1f1a10 0%,#080808 70%)}
+.hero .bgv::after{display:none}
+.hero .ph{position:absolute;left:18px;bottom:16px}
+.ph{display:inline-block;font-size:11px;letter-spacing:.06em;color:var(--peach);border:1px dashed var(--line-strong);border-radius:8px;padding:6px 10px;background:#0b0b0f99;font-weight:500;line-height:1.35}
+.card .ph{position:absolute;top:18px;left:18px;z-index:1}
+.card .bg.none{background:radial-gradient(120% 80% at 15% 0%,#2a2a35 0%,#17171f 55%,#080808 100%)}
+.statrow{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
+.statrow .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.statrow .wrap>div{padding:34px 26px;border-left:1px solid var(--line)}
+.statrow .wrap>div:first-child{border-left:0;padding-left:0}
+.statrow b{display:block;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(34px,4vw,56px);line-height:1;color:var(--orange);text-transform:uppercase}
+.statrow span{display:block;margin-top:10px;font-size:13.5px;color:var(--muted);max-width:26ch}
+@media (max-width:860px){.statrow .wrap{grid-template-columns:1fr 1fr}.statrow .wrap>div{padding:24px 16px;border-left:0;border-top:1px solid var(--line)}.statrow .wrap>div:nth-child(-n+2){border-top:0}.statrow .wrap>div:first-child{padding-left:16px}}
+.ctas2{margin-top:28px}
+.spec h3.big{font-size:clamp(54px,6vw,86px);color:var(--orange);margin:10px 0 14px}
+.spec .n{font-family:Inter,sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600}
+.band blockquote{max-width:22ch}
+.tiles.four{grid-template-columns:repeat(4,1fr)}
+@media (max-width:1100px){.tiles.four{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.tiles.four{grid-template-columns:1fr}}
+.clip.empty{padding:22px;text-align:center}
+.clip.empty b{display:block;font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:22px;color:var(--text);margin-bottom:8px}
+.programs.open{margin-top:40px}
+.prog .pill{align-self:flex-start}
+.pack .note{font-size:14px;color:var(--muted);margin:10px 0 18px}
+.plist li b{font-weight:500;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--peach)}
+.contact .intro{margin-bottom:6px}
+@media (max-width:760px){.card .body{padding-top:92px}.hero .ph{position:static;margin-top:22px}.hero{padding-top:140px}}
+
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.8 2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-msg" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m3 7 9 6 9-6" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+</svg>
+
+<div class="mock">Draft for Jack. New business page for 360 Media Group. Not live.</div>
+
+<nav class="nav" aria-label="Main">
+  <a class="mark" href="#top" aria-label="360 Media Group, back to top">360°</a>
+  <a class="l opt" href="/">Entertainment</a>
+  <a class="l" href="#services">Business</a>
+  <a class="l" href="#results">Results</a>
+  <a class="l opt" href="#packages">Packages</a>
+  <a class="l" href="#faq">FAQ</a>
+  <span class="sep"></span>
+  <a class="l" href="#contact">Contact</a>
+  <a class="cta" href="#contact">Free search check</a>
+</nav>
+
+<a class="callpill" href="tel:+61461406627"><span class="dot"><svg><use href="#i-phone"/></svg></span>0461 406 627</a>
+
+<main id="top">
+
+  <!-- 1. HERO: one headline, one main button, one quiet link. Same shape as the agency page. -->
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="bgv" aria-hidden="true"><div class="glow"></div></div>
+    <p class="tag fade">Media for Business · Sunshine Coast</p>
+    <h1 id="hero-h" class="display reveal" data-split><span class="line">Get found.</span><span class="line o">Get chosen.</span></h1>
+    <p class="sub fade">Websites, film, SEO and Google Ads for local businesses, from one Sunshine Coast crew.<br>One point of contact for all of it.</p>
+    <div class="ctas fade">
+      <a class="pill pill-dark" href="#contact">Get your free search check<span class="dot"><svg><use href="#i-arrow"/></svg></span></a>
+      <a class="pill pill-line" href="#work">See the work<span class="dot"><svg><use href="#i-arrow"/></svg></span></a>
+    </div>
+    <p class="where fade"><span>Pay when it's live</span><span>You own it</span><span>One point of contact</span></p>
+    <span class="ph">[Hero video: a 6 second loop from a film day]</span>
+  </section>
+
+  <!-- 2. PROOF ROW: the agency uses years and site counts. Yours are the promises nobody else makes. -->
+  <section class="statrow" aria-label="Our promises in numbers">
+    <div class="wrap">
+      <div><b>2 weeks</b><span>Your site live after sign-off</span></div>
+      <div><b>$0</b><span>Google Ads management until the first-month numbers are hit</span></div>
+      <div><b>5 days</b><span>Edits back, or 20% off that shoot</span></div>
+      <div><b>1</b><span>Point of contact for all of it</span></div>
+    </div>
+  </section>
+
+  <!-- 3. POSITIONING: local and in-house. -->
+  <section class="sec" aria-labelledby="pos-h">
+    <div class="wrap">
+      <p class="eyebrow">Local and in-house</p>
+      <h2 id="pos-h" class="display reveal" data-split>One crew for the lot.</h2>
+      <p class="intro fade">Most businesses have a web person, a video person, an ads person and nobody steering. We do all of it under one roof on the Sunshine Coast, so you make one call and it gets done.</p>
+      <div class="ctas2 fade"><a class="pill pill-gold" href="#contact">See where you stand on Google<span class="dot"><svg><use href="#i-arrow"/></svg></span></a></div>
+    </div>
+  </section>
+
+  <!-- 4. RESULTS: stat cards. Only real numbers go here. -->
+  <section class="sec alt" id="results" aria-labelledby="res-h">
+    <div class="wrap">
+      <p class="eyebrow">Results</p>
+      <h2 id="res-h" class="display reveal" data-split>We test it on ourselves first.</h2>
+      <p class="intro fade">Never sell what we haven't tried. These are our own numbers, from the same check we run on your business.</p>
+      <div class="spec">
+        <article class="fade">
+          <p class="n">360 Media Group</p>
+          <h3 class="display big">8 / 10</h3>
+          <p>Our own website on the 10-point Google and AI search check. Yours gets the same test.</p>
+          <q>Measured November 2026</q>
+        </article>
+        <article class="fade">
+          <p class="n">360 Media Group</p>
+          <h3 class="display big">12 of 46</h3>
+          <p>AI answers that named us when we asked five AI engines the questions our customers ask.</p>
+          <q>Measured 9 November 2026</q>
+        </article>
+        <article class="fade">
+          <p class="n">[Client name]</p>
+          <h3 class="display big">[+ %]</h3>
+          <p>[One real client number goes here, with their OK. Enquiries, calls or rankings.]</p>
+          <q>[Read the case study]</q>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SERVICES: four cards, one link each. -->
+  <section class="sec" id="services" aria-labelledby="svc-h">
+    <div class="wrap">
+      <p class="eyebrow">What we do</p>
+      <h2 id="svc-h" class="display reveal" data-split>How we help local businesses grow.</h2>
+      <p class="intro fade">Four things, run by one crew. Take one or take the lot.</p>
+      <div class="svc">
+        <article class="card fade">
+          <div class="bg none"></div><span class="ph">[Photo or clip: a site we built]</span>
+          <div class="body">
+            <h3 class="display">Websites + booking</h3>
+            <p>A fast site that takes enquiries and bookings, built to be found on Google. Live within 2 weeks of sign-off, and you don't pay the balance until it is.</p>
+            <a class="pill pill-white" href="#contact" data-pick="website">Websites<span class="dot"><svg><use href="#i-arrow"/></svg></span></a>
+          </div>
+        </article>
+        <article class="card fade">
+          <div class="bg none"></div><span class="ph">[Clip: behind the scenes on a film day]</span>
+          <div class="body">
+            <h3 class="display">Film + content</h3>
+            <p>We come to you with the cameras and shoot the business working. Reels, photos and ads from a single day, edited and back in 5 business days.</p>
+            <a class="pill pill-white" href="#contact" data-pick="film">Content days<span class="dot"><svg><use href="#i-arrow"/></svg></span></a>
+          </div>
+        </article>
+        <article class="card fade">
+          <div class="bg none"></div><span class="ph">[Screenshot: a search check report]</span>
+          <div class="body">
+            <h3 class="display">SEO + AI search</h3>
+            <p>Showing up on Google, and showing up when people ask ChatGPT who to call. We measure where you are, fix what's holding you back and re-test every month.</p>
+            <a class="pill pill-white" href="#contact" data-pick="seo">Search<span class="dot"><svg><use href="#i-arrow"/></svg></span></a>
+          </div>
+        </article>
+        <article class="card fade">
+          <div class="bg none"></div><span class="ph">[Screenshot: a Google Ads result]</span>
+          <div class="body">
+            <h3 class="display">Google Ads</h3>
+            <p>Done for you. We agree the first-month numbers up front, and our management is free until we hit them. You pay Google direct for the ad spend.</p>
+            <a class="pill pill-white" href="#contact" data-pick="ads">Google Ads<span class="dot"><svg><use href="#i-arrow"/></svg></span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-label="How we work">
+    <div class="wrap">
+      <p class="eyebrow">How we work</p>
+      <blockquote>One crew. One point of contact. No excuses.</blockquote>
+    </div>
+  </section>
+
+  <!-- 6. WHY 360: four feature cards + the button again. -->
+  <section class="dark" id="why" aria-labelledby="why-h">
+    <div class="wrap">
+      <p class="eyebrow">Why 360</p>
+      <h2 id="why-h" class="display reveal" data-split>Talking to a few agencies? Good.</h2>
+      <p class="intro fade">You should. Ask every one of them these four questions, then ask us.</p>
+      <div class="tiles four">
+        <div class="tile fade"><h3 class="display">Who owns it?</h3><p class="k">You do</p><p>Your domain, your content and your customer list are yours. If we part ways, they go with you.</p></div>
+        <div class="tile fade"><h3 class="display">When do I pay?</h3><p class="k">When it's live</p><p>A deposit to start, and the balance once the site is live and you've signed it off.</p></div>
+        <div class="tile fade"><h3 class="display">Who do I call?</h3><p class="k">One person</p><p>One point of contact for the website, the filming, the search and the ads. No being passed around.</p></div>
+        <div class="tile fade"><h3 class="display">What if it's late?</h3><p class="k">It costs us, not you</p><p>Edits back in 5 business days or 20% off that shoot. Ads management free until the numbers are hit.</p></div>
+      </div>
+      <div class="ctas fade">
+        <a class="pill pill-gold" href="#contact">Get your free search check<span class="dot"><svg><use href="#i-arrow"/></svg></span></a>
+        <a class="pill pill-line" href="#work">See the work<span class="dot"><svg><use href="#i-arrow"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. REVIEWS -->
+  <section class="sec" id="reviews" aria-labelledby="rev-h">
+    <div class="wrap">
+      <p class="eyebrow">Reviews</p>
+      <h2 id="rev-h" class="display reveal" data-split>What clients say.</h2>
+      <p class="intro fade">[Google rating and review count go here, straight from the profile.]</p>
+      <div class="reviews">
+        <figure class="rev hl fade"><blockquote>[A real Google review from a business client, word for word]</blockquote><figcaption><cite>[Name] <span>[Business]</span></cite></figcaption></figure>
+        <figure class="rev fade"><blockquote>[A real Google review, word for word]</blockquote><figcaption><cite>[Name] <span>[Business]</span></cite></figcaption></figure>
+        <figure class="rev fade"><blockquote>[A real Google review, word for word]</blockquote><figcaption><cite>[Name] <span>[Business]</span></cite></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. THE WORK: portfolio row, one line result under each. -->
+  <section class="sec alt" id="work" aria-labelledby="work-h">
+    <div class="wrap">
+      <p class="eyebrow">The work</p>
+      <h2 id="work-h" class="display reveal" data-split>See it before you book it.</h2>
+      <p class="intro fade">Real sites and real shoots. Each one gets a name, a picture and one line on what it did.</p>
+      <div class="deck-wrap fade">
+        <button class="arrow prev" type="button" aria-label="Previous"><svg><use href="#i-left"/></svg></button>
+        <div class="deck" id="deck">
+          <div class="clip empty"><span><b>Leigh Fitness</b>Personal trainer, Maroochydore. Website.<br>[Add the result, with Leigh's OK]</span></div>
+          <div class="clip empty"><span><b>[Client]</b>[Film day. One line on the result]</span></div>
+          <div class="clip empty"><span><b>[Client]</b>[Search. One line on the result]</span></div>
+          <div class="clip empty"><span><b>[Client]</b>[Google Ads. One line on the result]</span></div>
+        </div>
+        <button class="arrow next" type="button" aria-label="More"><svg><use href="#i-right"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. PACKAGES: the agency hides its prices in the FAQ. Yours are up front. -->
+  <section class="sec" id="packages" aria-labelledby="pk-h">
+    <div class="wrap">
+      <p class="eyebrow">Packages</p>
+      <h2 id="pk-h" class="display reveal" data-split>Real prices, up front.</h2>
+      <p class="intro fade">All prices plus GST. [Jack to confirm each one before this goes live.]</p>
+      <div class="programs open">
+        <article class="prog fade">
+          <h3 class="display">The Switch</h3>
+          <p class="who">A new website, moved over and live.</p>
+          <ul><li>Built to be found on Google</li><li>Enquiry form and click to call</li><li>Live within 2 weeks of sign-off</li><li>Balance paid once it's live</li></ul>
+          <div class="price">$5,000</div><div class="per">once</div>
+          <a class="pill pill-line" href="#contact" data-pick="website">Ask about The Switch<span class="dot"><svg><use href="#i-arrow"/></svg></span></a>
+        </article>
+        <article class="prog fade">
+          <h3 class="display">Content Day</h3>
+          <p class="who">A full day of filming at your business.</p>
+          <ul><li>8 to 10 hours on site</li><li>Reels, photos and ad clips</li><li>Edits back in 5 business days</li><li>Or 20% off that shoot</li></ul>
+          <div class="price">$2,500</div><div class="per">per day</div>
+          <a class="pill pill-line" href="#contact" data-pick="film">Ask about a Content Day<span class="dot"><svg><use href="#i-arrow"/></svg></span></a>
+        </article>
+        <article class="prog fade">
+          <h3 class="display">Google Ads</h3>
+          <p class="who">Done for you, measured every month.</p>
+          <ul><li>First-month numbers agreed up front</li><li>Management free until they're hit</li><li>Ad spend paid direct to Google</li><li>Tracking set up properly</li></ul>
+          <div class="price">$1,500</div><div class="per">a month</div>
+          <a class="pill pill-line" href="#contact" data-pick="ads">Ask about Google Ads</a>
+        </article>
+        <article class="prog hl fade">
+          <h3 class="display">The Partnership</h3>
+          <p class="who">Everything, every month. For businesses ready to go hard.</p>
+          <ul><li>Film days every month</li><li>Website, search and AI search</li><li>Social and ads run for you</li><li>One point of contact</li></ul>
+          <div class="price">$10,000</div><div class="per">every 4 weeks</div>
+          <a class="pill pill-black" href="#contact" data-pick="partnership">Ask about The Partnership<span class="dot"><svg><use href="#i-arrow"/></svg></span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 + 11. LOCAL + FAQ -->
+  <section class="sec alt" id="faq" aria-label="Local and questions">
+    <div class="wrap">
+      <div class="pair">
+        <div class="pack fade">
+          <p class="eyebrow">Sunshine Coast</p>
+          <h2 class="display">Local, and we come to you.</h2>
+          <p class="note">Based on the Sunshine Coast and working across South East Queensland.</p>
+          <ul class="plist">
+            <li><span>Noosa</span><b>Sunshine Coast</b></li>
+            <li><span>Maroochydore and Mooloolaba</span><b>Sunshine Coast</b></li>
+            <li><span>Caloundra, Buderim and Nambour</span><b>Sunshine Coast</b></li>
+            <li><span>Brisbane</span><b>We travel</b></li>
+            <li><span>Gold Coast</span><b>We travel</b></li>
+          </ul>
+          <div class="spacer"></div>
+          <a class="pill pill-gold" href="#contact">Get in touch<span class="dot"><svg><use href="#i-arrow"/></svg></span></a>
+        </div>
+        <div class="faqbox fade">
+          <p class="eyebrow">Good to know</p>
+          <h2 class="display">Questions, answered.</h2>
+          <div class="qas">
+            <details class="qa" open><summary>What's the free search check?</summary><p>A 10-point check of how your business shows up on Google and in AI search like ChatGPT. You get a short report with a score out of 10 and what to fix first. No cost.</p></details>
+            <details class="qa"><summary>How long does a website take?</summary><p>It goes live within 2 weeks of you signing off the design.</p></details>
+            <details class="qa"><summary>When do I pay?</summary><p>A deposit to start, and the balance once it's live and you're happy with it.</p></details>
+            <details class="qa"><summary>Do I own my website?</summary><p>You own your domain, your content and your customer list.</p></details>
+            <details class="qa"><summary>Who pays for the ads?</summary><p>You pay Google or Meta direct for the ad spend. Our fee is for running them.</p></details>
+            <details class="qa"><summary>Will you work with my competitor?</summary><p>One business per trade in each area, and the first to say yes gets us.</p></details>
+            <details class="qa"><summary>What does it cost?</summary><p>A website is $5,000, a Content Day is $2,500 and Google Ads management is $1,500 a month, all plus GST. [Jack to confirm]</p></details>
+            <details class="qa"><summary>Do you do events too?</summary><p>Yes. The entertainment side does DJs, 360 photo booths, photo and video for weddings, parties and corporate events.</p></details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. CONTACT: one form, one ask. -->
+  <section class="contact" id="contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <div class="cgrid">
+        <div>
+          <p class="eyebrow">Free, no strings</p>
+          <h2 id="contact-h" class="display reveal" data-split>See where you stand.</h2>
+          <p class="intro">Tell us your business and your website. We'll run the check and send your score out of 10, with what to fix first.</p>
+          <ul class="clist">
+            <li><svg><use href="#i-phone"/></svg><a href="tel:+61461406627">0461 406 627</a></li>
+            <li><svg><use href="#i-msg"/></svg><a href="sms:+61461406627">Text Jack</a></li>
+            <li><svg><use href="#i-mail"/></svg><a href="mailto:360mediagroup.net@gmail.com">360mediagroup.net@gmail.com</a></li>
+            <li><svg><use href="#i-ig"/></svg><a href="https://www.instagram.com/360.media.group/" target="_blank" rel="noopener">@360.media.group</a></li>
+            <li><svg><use href="#i-pin"/></svg>Sunshine Coast, Queensland</li>
+          </ul>
+        </div>
+        <form id="enquiry" novalidate>
+          <div class="row">
+            <div class="f"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name"></div>
+            <div class="f"><label for="f-phone">Mobile</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+          </div>
+          <div class="row">
+            <div class="f"><label for="f-biz">Business name</label><input id="f-biz" name="business"></div>
+            <div class="f"><label for="f-web">Website <i>(if you have one)</i></label><input id="f-web" name="website"></div>
+          </div>
+          <div class="f"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email"></div>
+          <div class="f"><label for="f-what">What do you want help with?</label>
+            <select id="f-what" name="what">
+              <option value="">Just the free search check</option>
+              <option value="website">A website or booking system</option>
+              <option value="film">Film and content</option>
+              <option value="seo">SEO and AI search</option>
+              <option value="ads">Google Ads</option>
+              <option value="partnership">The Partnership, all of it</option>
+            </select></div>
+          <div class="f"><label for="f-msg">Anything else?</label><textarea id="f-msg" name="message"></textarea></div>
+          <input class="hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="pill pill-dark" type="submit">Send me my score<span class="dot"><svg><use href="#i-arrow"/></svg></span></button>
+          <div class="msg" id="msg" role="status"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="big">360° Media Group</p>
+    <p class="line">We make media easy. For your event, or for your business.</p>
+    <p class="line"><b>Jack Borthwick</b> · 0461 406 627 · Sunshine Coast, Queensland</p>
+    <div class="links">
+      <a href="/">Entertainment</a><a href="#services">Business</a><a href="#results">Results</a><a href="#packages">Packages</a><a href="#faq">FAQ</a><a href="#contact">Contact</a><a href="https://www.instagram.com/360.media.group/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <div class="legal"><span>Draft page. Anything in [square brackets] still needs a real photo, number or review. Guarantees are in addition to your rights under Australian Consumer Law.</span><span>360 Media Group</span></div>
+  </div>
+</footer>
+
+<script>
+/* ================== EDIT HERE ================== */
+const SITE = { live: false, phone: "+61461406627", email: "360mediagroup.net@gmail.com", heroVideo: null };
+const $ = s => document.querySelector(s);
+const deck = $("#deck");
+document.querySelector(".arrow.prev").onclick = () => deck.scrollBy({left: -deck.clientWidth * .8, behavior: "smooth"});
+document.querySelector(".arrow.next").onclick = () => deck.scrollBy({left: deck.clientWidth * .8, behavior: "smooth"});
+document.querySelectorAll("[data-pick]").forEach(a => a.addEventListener("click", () => { $("#f-what").value = a.dataset.pick; }));
+const form = $("#enquiry"), msg = $("#msg");
+const say = t => { msg.style.display = "block"; msg.textContent = t; };
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  const d = Object.fromEntries(new FormData(form));
+  if (d._honey) return;
+  if (!d.name.trim() || !d.phone.trim()) return say("Add your name and mobile so Jack can get back to you.");
+  if (!SITE.live) return say("Draft only, nothing was sent. On the live site this goes straight to Jack.");
+});
+document.querySelectorAll("[data-split]").forEach(el => {
+  const walk = n => { [...n.childNodes].forEach(c => {
+    if (c.nodeType === 3) { const frag = document.createDocumentFragment(); c.textContent.split(/(\s+)/).forEach(part => { if (!part) return; if (/^\s+$/.test(part)) frag.appendChild(document.createTextNode(part)); else { const s = document.createElement("span"); s.className = "w"; s.textContent = part; frag.appendChild(s); } }); c.replaceWith(frag); }
+    else if (c.nodeType === 1) walk(c); }); };
+  walk(el); el.querySelectorAll(".w").forEach((w, i) => w.style.transitionDelay = (i * 70) + "ms");
+});
+const rio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); rio.unobserve(e.target); } }), {threshold: .15, rootMargin: "0px 0px -6% 0px"});
+document.querySelectorAll(".reveal,.fade").forEach(el => rio.observe(el));
+
+</script>
+</body>
+</html>
